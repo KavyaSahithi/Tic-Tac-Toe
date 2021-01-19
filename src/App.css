@@ -43,7 +43,8 @@
   color: white;
   cursor: pointer;
   outline: none;
+  overflow: hidden;
 }
 .square:hover {
-  background-color: rgb(197, 231, 243);
+  opacity: 0.7;
 }
