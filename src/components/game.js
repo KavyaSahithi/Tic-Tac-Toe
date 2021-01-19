@@ -2,13 +2,6 @@ import React, { useState } from 'react'
 import { calculateWinner } from '../code'
 import Board from './board'
 
-const styles = {
-  width: '200px',
-  margin: '28px auto',
-  marginTop: '10vh',
-  backgroundColor: 'blue',
-}
-
 function Game() {
   const [board, setBoard] = useState(Array(9).fill(null))
   const [xIsNext, setXIsNext] = useState(true)
@@ -34,19 +27,7 @@ function Game() {
           setSum(0)
           setXIsNext(true)
         }}
-        style={{
-          padding: '1vh 2vh',
-          marginTop: '3vh',
-          border: 'red',
-          borderRadius: '1vh',
-          backgroundColor: 'red',
-          cursor: 'pointer',
-          color: 'white',
-          fontSize: '3vh',
-          '&:hover': {
-            background: '#efefef',
-          },
-        }}
+        className='btn'
       >
         <strong> START GAME </strong>
       </button>
@@ -55,21 +36,15 @@ function Game() {
 
   return (
     <>
-      <div styles={styles}>
+      <div className='game'>
         <div>
-          <h1 style={{ marginTop: '10vh' }}>
-            <span
-              style={{
-                padding: '2vh 4vh',
-                border: 'solid 3px',
-                marginTop: '10vh',
-              }}
-            >
+          <h1>
+            <span className='display'>
               {winner
                 ? 'Winner ' + winner
                 : sum === 9
                 ? 'It is a draw!'
-                : 'Next Player ' + (xIsNext ? 'X' : 'O')}
+                : 'Next Player  ' + (xIsNext ? 'X' : 'O')}
             </span>
           </h1>
           <h3>{renderMoves()}</h3>
