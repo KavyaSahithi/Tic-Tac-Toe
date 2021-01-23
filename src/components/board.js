@@ -9,10 +9,8 @@ import Square from './square'
 function Board({ squares, onClick }) {
   return (
     <div className='board'>
-      {/* Loops over all squares */}
       {squares.map((square, i) => {
         return (
-          /* Passes props down to Square component */
           <Square key={i} value={square} onClick={() => onClick(i)}></Square>
         )
       })}

@@ -6,6 +6,7 @@ import React from 'react'
  */
 function Square(props) {
   const { onClick, value } = props
+
   // Function to decide background color of the square depending on player.
   const giveMeColor = () => {
     switch (value) {
